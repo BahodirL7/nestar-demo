@@ -3,6 +3,9 @@ import { Stack } from "@mui/material";
 import Top from "../Top";
 import HeaderFilter from "../homepage/HeaderFilter";
 import Footer from "../Footer";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const withLayoutMain = (Component: any) => {
   return (props: any) => {
