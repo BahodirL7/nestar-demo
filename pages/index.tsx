@@ -5,6 +5,7 @@ import TrendProperties from "@/libs/components/homepage/TrendProperties";
 import TopAgents from "@/libs/components/homepage/TopAgents";
 import PopularProperties from "@/libs/components/homepage/PopularProperties";
 import Advertisement from "@/libs/components/homepage/Advertisement";
+import TopProperties from "@/libs/components/homepage/TopProperties";
 
 const Home: NextPage = () => {
   return (
@@ -12,7 +13,7 @@ const Home: NextPage = () => {
       <TrendProperties />
       <PopularProperties />
       <Advertisement />
-      <TrendProperties />
+      <TopProperties />
       <TopAgents />
     </Stack>
   );

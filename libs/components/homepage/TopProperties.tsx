@@ -6,13 +6,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import property from "@/pages/property";
 import TopPropertyCard from "./TopPropertyCard";
 
-const TrendProperties = ({ initialInput, ...props }: any) => {
-  const [trendProperties, setTrendProperties] =
-    useState<number[]>(initialInput);
+const TopProperties = ({ initialInput, ...props }: any) => {
+  const [topProperties, setTopProperties] = useState<number[]>(initialInput);
+
   return (
     <Stack className={"top-properties"}>
       <Stack className={"container"}>
-        <Stack className={"left"}>
+        <Stack className={"info-box"}>
           <Box className={"left"}>
             <span>Top properties</span>
             <p>Check out Top Properties</p>
@@ -38,9 +38,9 @@ const TrendProperties = ({ initialInput, ...props }: any) => {
               el: ".swiper-top-pagination",
             }}
           >
-            {trendProperties.map((property, index) => {
+            {topProperties.map((property, index) => {
               return (
-                <SwiperSlide className={"top-property-slider"} key={index}>
+                <SwiperSlide className={"top-property-slide"} key={index}>
                   <TopPropertyCard />
                 </SwiperSlide>
               );
@@ -51,8 +51,9 @@ const TrendProperties = ({ initialInput, ...props }: any) => {
     </Stack>
   );
 };
-TrendProperties.defaultProps = {
+
+TopProperties.defaultProps = {
   initialInput: [1, 2, 3, 4, 5, 6, 7],
 };
 
-export default TrendProperties;
+export default TopProperties;
