@@ -8,9 +8,6 @@ const TopAgentCard = () => {
         component={"img"}
         className={"card-img"}
         src="/img/profile/ben.jpg"
-        // style={{
-        //   backgroundImage: `url("/img/profile/ben.jpg")`,
-        // }}
       ></Box>
       <Typography className="agent-name">
         <strong>Benjamin</strong>

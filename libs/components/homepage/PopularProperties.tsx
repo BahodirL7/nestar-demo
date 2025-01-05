@@ -5,8 +5,10 @@ import PopularPropertyCard from "./PopularPropertyCard";
 import React from "react";
 
 const PopularProperties = ({ initialInput, ...props }: any) => {
-  const [popularProperties, setPopularProperties] =
-    useState<number[]>(initialInput);
+  const [popularProperties, setPopularProperties] = useState<number[]>([
+    1, 2, 3, 4, 5, 6, 7,
+  ]);
+
   return (
     <Stack className={"popular-properties"}>
       <Stack className={"container"}>
@@ -49,9 +51,6 @@ const PopularProperties = ({ initialInput, ...props }: any) => {
       </Stack>
     </Stack>
   );
-};
-PopularProperties.defaultProps = {
-  initialInput: [1, 2, 3, 4, 5, 6, 7],
 };
 
 export default PopularProperties;
