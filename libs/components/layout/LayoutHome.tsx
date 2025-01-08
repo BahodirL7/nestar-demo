@@ -6,36 +6,63 @@ import Footer from "../Footer";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import useDeviceDetect from "@/libs/hooks/useDeviceDetect";
 
 const withLayoutMain = (Component: any) => {
   return (props: any) => {
-    return (
-      <>
-        <Head>
-          <title>Nestar home</title>
-        </Head>
+    const device = useDeviceDetect();
 
-        <Stack id="pc-wrap">
-          <Stack id={"top"}>
-            <Top />
-          </Stack>
+    if (device == "mobile") {
+      return (
+        <>
+          <Head>
+            <title>Nestar home</title>
+          </Head>
 
-          <Stack className={"header-main"}>
-            <Stack className={"container"}>
-              <HeaderFilter />
+          <Stack id="mobile-wrap">
+            <Stack id={"top"}>
+              <Top />
+            </Stack>
+
+            <Stack id={"main"}>
+              <Component {...props} />
+            </Stack>
+
+            <Stack id={"footer"}>
+              <Footer />
             </Stack>
           </Stack>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <Head>
+            <title>Nestar home</title>
+          </Head>
 
-          <Stack id={"main"}>
-            <Component {...props} />
-          </Stack>
+          <Stack id="pc-wrap">
+            <Stack id={"top"}>
+              <Top />
+            </Stack>
 
-          <Stack id={"footer"}>
-            <Footer />
+            <Stack className={"header-main"}>
+              <Stack className={"container"}>
+                <HeaderFilter />
+              </Stack>
+            </Stack>
+
+            <Stack id={"main"}>
+              <Component {...props} />
+            </Stack>
+
+            <Stack id={"footer"}>
+              <Footer />
+            </Stack>
           </Stack>
-        </Stack>
-      </>
-    );
+        </>
+      );
+    }
   };
 };
 

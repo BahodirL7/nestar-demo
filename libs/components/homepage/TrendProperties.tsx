@@ -9,6 +9,7 @@ const TrendProperties = () => {
   const [trendProperties, setTrendProperties] = useState<number[]>([
     1, 2, 3, 4, 5, 6, 7,
   ]);
+
   return (
     <Stack className={"trend-properties"}>
       <Stack className={"container"}>
@@ -25,6 +26,7 @@ const TrendProperties = () => {
             </div>
           </Box>
         </Stack>
+
         <Stack className={"card-box"}>
           {trendProperties.length === 0 ? (
             <Box className={"empty-list"}>Trends Empty</Box>
